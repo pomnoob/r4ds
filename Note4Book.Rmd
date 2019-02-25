@@ -63,3 +63,19 @@ geom_smooth(mapping = aes(x = displ, y = hwy))
 
 Every _geom function_ of ggplot2 takes a _mapping_ option.
 
+```{r}
+ggplot(data=mpg,mapping = aes(x=displ,y=hwy))+
+  geom_point(mapping = aes(color=class))+
+  geom_smooth(mapping = aes(linetype=drv))
+```
+
+* Statistic transformation
+  + Bar charts, histograms, and frequency polygons bin your data and then plot bin counts, the number of points that fall in each bin.
+  + Smoothers fit a model to your data and then plot predictions from the model.
+  + Boxplots compute a robust summary of the distribution and display a specially formatted box.  
+```{r}
+ggplot(data=diamonds)+
+  geom_bar(mapping = aes(x=cut))
+```
+
+
