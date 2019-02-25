@@ -1,0 +1,38 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+# Notes of R for data science
+## Chapter 1  
+
+Basics 
+
+```{r}
+library(tidyverse)
+ggplot(data=mpg)+geom_point(mapping = aes(x=displ,y=hwy))
+```
+  
+Just to add _aesthetics_ to the plot  
+
+```{r}
+ggplot(data=mpg)+geom_point(mapping = aes(x=displ,y=hwy,color=class))
+```
+
+```{r}
+ggplot(data = mpg) +
+geom_point(mapping = aes(x = displ, y = hwy, size = class))
+
+#transparency of point
+ggplot(data = mpg) +
+geom_point(mapping = aes(x = displ, y = hwy, alpha = class))
+
+#shape of point
+ggplot(data = mpg) +
+geom_point(mapping = aes(x = displ, y = hwy, shape = class))
+
+#color is a string
+ggplot(data = mpg) +
+geom_point(mapping = aes(x = displ, y = hwy), color = "blue")
+```
+
